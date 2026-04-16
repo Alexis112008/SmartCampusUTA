@@ -1,0 +1,11 @@
+[
+  {
+    "Name": "Nuevo perfil",
+    "Projects": [
+      {
+        "Path": "SmartCampus.API\\SmartCampus.API.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

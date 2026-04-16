@@ -1,0 +1,649 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\smartcampus.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\smartcampus.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\persistence\\context\\smartcampusdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\persistence\\context\\smartcampusdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\domain\\entities\\personaladministrativo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\domain\\entities\\personaladministrativo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\domain\\entities\\ventanilla.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\domain\\entities\\ventanilla.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\domain\\entities\\historialtramite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\domain\\entities\\historialtramite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\domain\\entities\\tramite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\domain\\entities\\tramite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\domain\\entities\\estudiante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\domain\\entities\\estudiante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\persistence\\repositories\\campusrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\persistence\\repositories\\campusrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\domain\\entities\\rutacampus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\domain\\entities\\rutacampus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\domain\\entities\\turno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\domain\\entities\\turno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\domain\\entities\\categoriadoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\domain\\entities\\categoriadoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\domain\\entities\\rol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\domain\\entities\\rol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\domain\\entities\\documento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\domain\\entities\\documento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\domain\\entities\\nodocampus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\domain\\entities\\nodocampus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\domain\\entities\\accionusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\domain\\entities\\accionusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\domain\\entities\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\domain\\entities\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\application\\services\\campusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\application\\services\\campusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\controllers\\turnocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\controllers\\turnocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\application\\services\\turnoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\application\\services\\turnoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\persistence\\repositories\\turnorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\persistence\\repositories\\turnorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\controllers\\tramitecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\controllers\\tramitecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\application\\services\\tramiteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\application\\services\\tramiteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\controllers\\campuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\controllers\\campuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\persistence\\repositories\\tramiterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\persistence\\repositories\\tramiterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\dtos\\authdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\dtos\\authdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\dtos\\campusdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\dtos\\campusdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\dtos\\turnodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\dtos\\turnodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\dtos\\tramitedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\dtos\\tramitedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\domain\\datastructures\\grafo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\domain\\datastructures\\grafo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\domain\\datastructures\\arboldocumento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\domain\\datastructures\\arboldocumento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\domain\\datastructures\\cola.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\domain\\datastructures\\cola.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\domain\\datastructures\\pila.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\domain\\datastructures\\pila.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\domain\\datastructures\\listacircular.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\domain\\datastructures\\listacircular.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\domain\\datastructures\\listadoble.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\domain\\datastructures\\listadoble.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\domain\\datastructures\\listasimple.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\domain\\datastructures\\listasimple.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|c:\\users\\lenovo\\source\\repos\\smartcampusuta\\smartcampus.api\\smartcampus.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{3937FA72-BF88-6581-867B-6F27E5A7BFF6}|SmartCampus.API\\SmartCampus.API.csproj|solutionrelative:smartcampus.api\\smartcampus.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "SmartCampus.API\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Properties\\launchSettings.json",
+              "RelativeToolTip": "SmartCampus.API\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-16T23:23:46.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SmartCampus.API",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\SmartCampus.API.csproj",
+              "RelativeDocumentMoniker": "SmartCampus.API\\SmartCampus.API.csproj",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\SmartCampus.API.csproj",
+              "RelativeToolTip": "SmartCampus.API\\SmartCampus.API.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-16T23:19:37.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Estudiante.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\Entities\\Estudiante.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\Domain\\Entities\\Estudiante.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\Entities\\Estudiante.cs",
+              "RelativeToolTip": "SmartCampus.API\\Domain\\Entities\\Estudiante.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAowBQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T18:11:06.372Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CampusRepository.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Persistence\\Repositories\\CampusRepository.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\Persistence\\Repositories\\CampusRepository.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Persistence\\Repositories\\CampusRepository.cs",
+              "RelativeToolTip": "SmartCampus.API\\Persistence\\Repositories\\CampusRepository.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAA+wBEAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T17:58:06.888Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RutaCampus.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\Entities\\RutaCampus.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\Domain\\Entities\\RutaCampus.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\Entities\\RutaCampus.cs",
+              "RelativeToolTip": "SmartCampus.API\\Domain\\Entities\\RutaCampus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T18:13:06.394Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PersonalAdministrativo.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\Entities\\PersonalAdministrativo.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\Domain\\Entities\\PersonalAdministrativo.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\Entities\\PersonalAdministrativo.cs",
+              "RelativeToolTip": "SmartCampus.API\\Domain\\Entities\\PersonalAdministrativo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T18:06:40.311Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\appsettings.json",
+              "RelativeDocumentMoniker": "SmartCampus.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\appsettings.json",
+              "RelativeToolTip": "SmartCampus.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-11T16:43:01.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SmartCampusDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Persistence\\Context\\SmartCampusDbContext.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\Persistence\\Context\\SmartCampusDbContext.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Persistence\\Context\\SmartCampusDbContext.cs",
+              "RelativeToolTip": "SmartCampus.API\\Persistence\\Context\\SmartCampusDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFcAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T18:04:02.947Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Program.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\Program.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Program.cs",
+              "RelativeToolTip": "SmartCampus.API\\Program.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAUwDEAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T17:59:24.414Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Tramite.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\Entities\\Tramite.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\Domain\\Entities\\Tramite.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\Entities\\Tramite.cs",
+              "RelativeToolTip": "SmartCampus.API\\Domain\\Entities\\Tramite.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T18:11:31.916Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "HistorialTramite.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\Entities\\HistorialTramite.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\Domain\\Entities\\HistorialTramite.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\Entities\\HistorialTramite.cs",
+              "RelativeToolTip": "SmartCampus.API\\Domain\\Entities\\HistorialTramite.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T18:11:44.723Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Ventanilla.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\Entities\\Ventanilla.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\Domain\\Entities\\Ventanilla.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\Entities\\Ventanilla.cs",
+              "RelativeToolTip": "SmartCampus.API\\Domain\\Entities\\Ventanilla.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T18:11:58.085Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Turno.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\Entities\\Turno.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\Domain\\Entities\\Turno.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\Entities\\Turno.cs",
+              "RelativeToolTip": "SmartCampus.API\\Domain\\Entities\\Turno.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAkwBIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T18:12:10.944Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CategoriaDoc.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\Entities\\CategoriaDoc.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\Domain\\Entities\\CategoriaDoc.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\Entities\\CategoriaDoc.cs",
+              "RelativeToolTip": "SmartCampus.API\\Domain\\Entities\\CategoriaDoc.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T18:12:25.215Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Rol.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\Entities\\Rol.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\Domain\\Entities\\Rol.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\Entities\\Rol.cs",
+              "RelativeToolTip": "SmartCampus.API\\Domain\\Entities\\Rol.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T18:10:13.512Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Documento.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\Entities\\Documento.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\Domain\\Entities\\Documento.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\Entities\\Documento.cs",
+              "RelativeToolTip": "SmartCampus.API\\Domain\\Entities\\Documento.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T18:12:40.616Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "NodoCampus.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\Entities\\NodoCampus.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\Domain\\Entities\\NodoCampus.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\Entities\\NodoCampus.cs",
+              "RelativeToolTip": "SmartCampus.API\\Domain\\Entities\\NodoCampus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T18:12:54.048Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AccionUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\Entities\\AccionUsuario.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\Domain\\Entities\\AccionUsuario.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\Entities\\AccionUsuario.cs",
+              "RelativeToolTip": "SmartCampus.API\\Domain\\Entities\\AccionUsuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T18:09:36.767Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\Entities\\Usuario.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\Domain\\Entities\\Usuario.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\Entities\\Usuario.cs",
+              "RelativeToolTip": "SmartCampus.API\\Domain\\Entities\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T18:06:59.665Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CampusService.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Application\\Services\\CampusService.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\Application\\Services\\CampusService.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Application\\Services\\CampusService.cs",
+              "RelativeToolTip": "SmartCampus.API\\Application\\Services\\CampusService.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAqwEAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T17:58:34.883Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "TurnoController.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Controllers\\TurnoController.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\Controllers\\TurnoController.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Controllers\\TurnoController.cs",
+              "RelativeToolTip": "SmartCampus.API\\Controllers\\TurnoController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAqwC0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T17:57:30.476Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "TurnoService.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Application\\Services\\TurnoService.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\Application\\Services\\TurnoService.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Application\\Services\\TurnoService.cs",
+              "RelativeToolTip": "SmartCampus.API\\Application\\Services\\TurnoService.cs",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAqwJQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T17:57:01.25Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "TurnoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Persistence\\Repositories\\TurnoRepository.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\Persistence\\Repositories\\TurnoRepository.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Persistence\\Repositories\\TurnoRepository.cs",
+              "RelativeToolTip": "SmartCampus.API\\Persistence\\Repositories\\TurnoRepository.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAqwEMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T17:56:07.307Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "TramiteController.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Controllers\\TramiteController.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\Controllers\\TramiteController.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Controllers\\TramiteController.cs",
+              "RelativeToolTip": "SmartCampus.API\\Controllers\\TramiteController.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAqwD4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T17:55:22.552Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "TramiteService.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Application\\Services\\TramiteService.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\Application\\Services\\TramiteService.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Application\\Services\\TramiteService.cs",
+              "RelativeToolTip": "SmartCampus.API\\Application\\Services\\TramiteService.cs",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAqwHAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T17:54:19.899Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "CampusController.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Controllers\\CampusController.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\Controllers\\CampusController.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Controllers\\CampusController.cs",
+              "RelativeToolTip": "SmartCampus.API\\Controllers\\CampusController.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAqwCIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T17:59:02.181Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "TramiteRepository.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Persistence\\Repositories\\TramiteRepository.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\Persistence\\Repositories\\TramiteRepository.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Persistence\\Repositories\\TramiteRepository.cs",
+              "RelativeToolTip": "SmartCampus.API\\Persistence\\Repositories\\TramiteRepository.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAqwEoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T17:53:42.751Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "AuthDto.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\DTOs\\AuthDto.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\DTOs\\AuthDto.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\DTOs\\AuthDto.cs",
+              "RelativeToolTip": "SmartCampus.API\\DTOs\\AuthDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T17:49:11.477Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "CampusDto.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\DTOs\\CampusDto.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\DTOs\\CampusDto.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\DTOs\\CampusDto.cs",
+              "RelativeToolTip": "SmartCampus.API\\DTOs\\CampusDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T17:48:41.868Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "TurnoDto.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\DTOs\\TurnoDto.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\DTOs\\TurnoDto.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\DTOs\\TurnoDto.cs",
+              "RelativeToolTip": "SmartCampus.API\\DTOs\\TurnoDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T17:48:23.953Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "TramiteDto.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\DTOs\\TramiteDto.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\DTOs\\TramiteDto.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\DTOs\\TramiteDto.cs",
+              "RelativeToolTip": "SmartCampus.API\\DTOs\\TramiteDto.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAqwCMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T17:48:05.754Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Grafo.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\DataStructures\\Grafo.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\Domain\\DataStructures\\Grafo.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\DataStructures\\Grafo.cs",
+              "RelativeToolTip": "SmartCampus.API\\Domain\\DataStructures\\Grafo.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAA9wHYAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T17:08:07.91Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "ArbolDocumento.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\DataStructures\\ArbolDocumento.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\Domain\\DataStructures\\ArbolDocumento.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\DataStructures\\ArbolDocumento.cs",
+              "RelativeToolTip": "SmartCampus.API\\Domain\\DataStructures\\ArbolDocumento.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAqwGQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T17:07:46.218Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Cola.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\DataStructures\\Cola.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\Domain\\DataStructures\\Cola.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\DataStructures\\Cola.cs",
+              "RelativeToolTip": "SmartCampus.API\\Domain\\DataStructures\\Cola.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAqwGEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T17:07:23.329Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Pila.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\DataStructures\\Pila.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\Domain\\DataStructures\\Pila.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\DataStructures\\Pila.cs",
+              "RelativeToolTip": "SmartCampus.API\\Domain\\DataStructures\\Pila.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAqwE8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T17:07:00.648Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "ListaCircular.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\DataStructures\\ListaCircular.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\Domain\\DataStructures\\ListaCircular.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\DataStructures\\ListaCircular.cs",
+              "RelativeToolTip": "SmartCampus.API\\Domain\\DataStructures\\ListaCircular.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAqwFsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T17:06:34.791Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "ListaDoble.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\DataStructures\\ListaDoble.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\Domain\\DataStructures\\ListaDoble.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\DataStructures\\ListaDoble.cs",
+              "RelativeToolTip": "SmartCampus.API\\Domain\\DataStructures\\ListaDoble.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAqwHYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T17:06:06.395Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "ListaSimple.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\DataStructures\\ListaSimple.cs",
+              "RelativeDocumentMoniker": "SmartCampus.API\\Domain\\DataStructures\\ListaSimple.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\Domain\\DataStructures\\ListaSimple.cs",
+              "RelativeToolTip": "SmartCampus.API\\Domain\\DataStructures\\ListaSimple.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAqwFwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T17:05:32.902Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "SmartCampus.API.csproj",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\SmartCampus.API.csproj",
+              "RelativeDocumentMoniker": "SmartCampus.API\\SmartCampus.API.csproj",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\SmartCampusUTA\\SmartCampus.API\\SmartCampus.API.csproj",
+              "RelativeToolTip": "SmartCampus.API\\SmartCampus.API.csproj",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-11T16:36:48.157Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
