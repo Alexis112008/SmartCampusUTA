@@ -1,0 +1,474 @@
+/* Variables de color institucional UTA */
+:root {
+  --uta-primary:     #1a3a5c;
+  --uta-secondary:   #2e6da4;
+  --uta-accent:      #e8a020;
+  --uta-light:       #f0f4f8;
+  --uta-white:       #ffffff;
+  --uta-text:        #2c3e50;
+  --uta-muted:       #6c757d;
+  --uta-danger:      #dc3545;
+  --uta-success:     #28a745;
+  --shadow-sm:       0 2px 8px rgba(0,0,0,0.08);
+  --shadow-md:       0 4px 20px rgba(0,0,0,0.12);
+  --radius:          12px;
+  --radius-sm:       8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: var(--uta-light);
+  color: var(--uta-text);
+  min-height: 100vh;
+}
+
+/* ── LAYOUT DIVIDIDO ── */
+.auth-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Panel izquierdo: imagen/branding */
+.auth-brand {
+  flex: 1;
+  background: linear-gradient(
+    145deg,
+    var(--uta-primary) 0%,
+    var(--uta-secondary) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  color: var(--uta-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-brand::before {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+  top: -100px;
+  right: -100px;
+}
+
+.auth-brand::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+  bottom: -80px;
+  left: -80px;
+}
+
+.brand-logo {
+  width: 90px;
+  height: 90px;
+  background: var(--uta-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.brand-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  z-index: 1;
+  margin-bottom: 0.5rem;
+}
+
+.brand-subtitle {
+  font-size: 1rem;
+  opacity: 0.8;
+  text-align: center;
+  z-index: 1;
+  max-width: 280px;
+  line-height: 1.6;
+}
+
+.brand-features {
+  margin-top: 3rem;
+  z-index: 1;
+  width: 100%;
+  max-width: 320px;
+}
+
+.brand-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.brand-feature:last-child {
+  border-bottom: none;
+}
+
+.feature-icon {
+  width: 32px;
+  height: 32px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Panel derecho: formulario */
+.auth-form-panel {
+  width: 480px;
+  background: var(--uta-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 3.5rem;
+  overflow-y: auto;
+}
+
+.form-header {
+  margin-bottom: 2rem;
+}
+
+.form-header h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--uta-primary);
+  margin-bottom: 0.4rem;
+}
+
+.form-header p {
+  color: var(--uta-muted);
+  font-size: 0.95rem;
+}
+
+/* ── CAMPOS ── */
+.field-group {
+  margin-bottom: 1.25rem;
+}
+
+.field-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--uta-text);
+  margin-bottom: 0.4rem;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper .input-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--uta-muted);
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.75rem;
+  border: 1.5px solid #dde3ea;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  color: var(--uta-text);
+  background: #fafbfc;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.input-wrapper input:focus {
+  border-color: var(--uta-secondary);
+  box-shadow: 0 0 0 3px rgba(46,109,164,0.12);
+  background: var(--uta-white);
+}
+
+.input-wrapper input.is-error {
+  border-color: var(--uta-danger);
+  box-shadow: 0 0 0 3px rgba(220,53,69,0.1);
+}
+
+.input-wrapper input.is-success {
+  border-color: var(--uta-success);
+}
+
+/* Botón de mostrar contraseña */
+.toggle-password {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--uta-muted);
+  font-size: 1rem;
+  padding: 0;
+}
+
+.field-error {
+  font-size: 0.8rem;
+  color: var(--uta-danger);
+  margin-top: 0.3rem;
+  display: none;
+}
+
+.field-error.visible {
+  display: block;
+}
+
+/* ── SELECT ── */
+.input-wrapper select {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.75rem;
+  border: 1.5px solid #dde3ea;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  color: var(--uta-text);
+  background: #fafbfc;
+  transition: border-color 0.2s;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.input-wrapper select:focus {
+  border-color: var(--uta-secondary);
+  box-shadow: 0 0 0 3px rgba(46,109,164,0.12);
+}
+
+/* ── BOTONES ── */
+.btn-primary-uta {
+  width: 100%;
+  padding: 0.85rem;
+  background: var(--uta-primary);
+  color: var(--uta-white);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.btn-primary-uta:hover {
+  background: var(--uta-secondary);
+}
+
+.btn-primary-uta:active {
+  transform: scale(0.98);
+}
+
+.btn-primary-uta:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Spinner dentro del botón */
+.btn-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: none;
+}
+
+.btn-spinner.visible {
+  display: inline-block;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── DIVIDER ── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  color: var(--uta-muted);
+  font-size: 0.85rem;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #dde3ea;
+}
+
+/* ── ALERTAS ── */
+.alert-box {
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  margin-bottom: 1.25rem;
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.alert-box.visible {
+  display: flex;
+}
+
+.alert-danger {
+  background: #fff0f0;
+  border: 1px solid #f5c6cb;
+  color: #842029;
+}
+
+.alert-success {
+  background: #f0fff4;
+  border: 1px solid #b7dfc7;
+  color: #155724;
+}
+
+.alert-info {
+  background: #e8f4fd;
+  border: 1px solid #b8daff;
+  color: #084298;
+}
+
+/* ── LINKS ── */
+.form-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--uta-muted);
+}
+
+.form-footer a {
+  color: var(--uta-secondary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+
+.forgot-link {
+  font-size: 0.85rem;
+  color: var(--uta-secondary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+/* ── PASOS (registro) ── */
+.steps-indicator {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 0;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+}
+
+.step-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #dde3ea;
+  background: var(--uta-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--uta-muted);
+  z-index: 1;
+  transition: all 0.3s;
+}
+
+.step.active .step-circle {
+  border-color: var(--uta-secondary);
+  background: var(--uta-secondary);
+  color: white;
+}
+
+.step.done .step-circle {
+  border-color: var(--uta-success);
+  background: var(--uta-success);
+  color: white;
+}
+
+.step-label {
+  font-size: 0.72rem;
+  color: var(--uta-muted);
+  margin-top: 0.3rem;
+  text-align: center;
+}
+
+.step.active .step-label {
+  color: var(--uta-secondary);
+  font-weight: 600;
+}
+
+.step-line {
+  flex: 1;
+  height: 2px;
+  background: #dde3ea;
+  margin-top: -16px;
+}
+
+.step-line.done {
+  background: var(--uta-success);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .auth-brand {
+    display: none;
+  }
+
+  .auth-form-panel {
+    width: 100%;
+    padding: 2rem 1.5rem;
+  }
+}

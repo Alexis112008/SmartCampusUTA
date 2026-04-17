@@ -161,3 +161,4 @@ C:\Users\LENOVO\source\repos\SmartCampusUTA\SmartCampus.API\obj\Debug\net10.0\re
 C:\Users\LENOVO\source\repos\SmartCampusUTA\SmartCampus.API\obj\Debug\net10.0\SmartCampus.API.pdb
 C:\Users\LENOVO\source\repos\SmartCampusUTA\SmartCampus.API\obj\Debug\net10.0\SmartCampus.API.genruntimeconfig.cache
 C:\Users\LENOVO\source\repos\SmartCampusUTA\SmartCampus.API\obj\Debug\net10.0\ref\SmartCampus.API.dll
+C:\Users\LENOVO\source\repos\SmartCampusUTA\SmartCampus.API\obj\Debug\net10.0\SmartCampus.API.sourcelink.json
