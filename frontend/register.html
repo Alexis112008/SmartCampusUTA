@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartCampus UTA — Registro</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="auth-wrapper">
+
+  <!-- Panel izquierdo -->
+  <div class="auth-brand">
+    <div class="brand-logo">🎓</div>
+    <div class="brand-title">SmartCampus UTA</div>
+    <div class="brand-subtitle">
+      Crea tu cuenta y accede a todos los servicios universitarios
+    </div>
+    <div class="brand-features">
+      <div class="brand-feature">
+        <div class="feature-icon">⚡</div>
+        Registro rápido en 2 pasos
+      </div>
+      <div class="brand-feature">
+        <div class="feature-icon">🔐</div>
+        Acceso seguro con credenciales UTA
+      </div>
+      <div class="brand-feature">
+        <div class="feature-icon">📱</div>
+        Disponible desde cualquier dispositivo
+      </div>
+    </div>
+  </div>
+
+  <!-- Panel derecho -->
+  <div class="auth-form-panel">
+
+    <div class="form-header">
+      <h2>Crear cuenta</h2>
+      <p>Completa los datos para registrarte</p>
+    </div>
+
+    <!-- Indicador de pasos -->
+    <div class="steps-indicator">
+      <div class="step active" id="step1Indicator">
+        <div class="step-circle">1</div>
+        <div class="step-label">Datos personales</div>
+      </div>
+      <div class="step-line" id="line1"></div>
+      <div class="step" id="step2Indicator">
+        <div class="step-circle">2</div>
+        <div class="step-label">Acceso</div>
+      </div>
+    </div>
+
+    <!-- Alertas -->
+    <div class="alert-box alert-danger" id="regAlertError">
+      <span>⚠️</span>
+      <span id="regAlertErrorMsg">Error al registrar</span>
+    </div>
+    <div class="alert-box alert-success" id="regAlertSuccess">
+      <span>✅</span>
+      <span>Cuenta creada exitosamente. Redirigiendo al login...</span>
+    </div>
+
+    <form id="registerForm" novalidate>
+
+      <!-- PASO 1: Datos personales -->
+      <div id="step1">
+
+        <div class="field-group">
+          <label for="nombre">Nombre completo</label>
+          <div class="input-wrapper">
+            <span class="input-icon">👤</span>
+            <input
+              type="text"
+              id="nombre"
+              placeholder="Ej: Juan Carlos Pérez"
+            >
+          </div>
+          <div class="field-error" id="nombreError">
+            El nombre es obligatorio
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label for="cedula">Número de cédula</label>
+          <div class="input-wrapper">
+            <span class="input-icon">🪪</span>
+            <input
+              type="text"
+              id="cedula"
+              placeholder="0000000000"
+              maxlength="10"
+            >
+          </div>
+          <div class="field-error" id="cedulaError">
+            Ingresa una cédula ecuatoriana válida (10 dígitos)
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label for="rol">Tipo de usuario</label>
+          <div class="input-wrapper">
+            <span class="input-icon">🏷️</span>
+            <select id="rol">
+              <option value="">Selecciona tu rol</option>
+              <option value="3">Estudiante</option>
+              <option value="4">Docente</option>
+            </select>
+          </div>
+          <div class="field-error" id="rolError">
+            Selecciona un tipo de usuario
+          </div>
+        </div>
+
+        <!-- Campos adicionales para estudiante -->
+        <div id="camposEstudiante" style="display:none">
+          <div class="field-group">
+            <label for="carrera">Carrera</label>
+            <div class="input-wrapper">
+              <span class="input-icon">📚</span>
+              <select id="carrera">
+                <option value="">Selecciona tu carrera</option>
+                <option>Ingeniería en Sistemas</option>
+                <option>Ingeniería Industrial</option>
+                <option>Medicina</option>
+                <option>Derecho</option>
+                <option>Administración de Empresas</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="semestre">Semestre actual</label>
+            <div class="input-wrapper">
+              <span class="input-icon">📅</span>
+              <select id="semestre">
+                <option value="">Selecciona semestre</option>
+                <option>1</option><option>2</option>
+                <option>3</option><option>4</option>
+                <option>5</option><option>6</option>
+                <option>7</option><option>8</option>
+                <option>9</option><option>10</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          class="btn-primary-uta"
+          onclick="irAlPaso2()"
+        >
+          Continuar →
+        </button>
+
+      </div>
+
+      <!-- PASO 2: Credenciales -->
+      <div id="step2" style="display:none">
+
+        <div class="field-group">
+          <label for="regEmail">Correo institucional</label>
+          <div class="input-wrapper">
+            <span class="input-icon">✉️</span>
+            <input
+              type="email"
+              id="regEmail"
+              placeholder="usuario@uta.edu.ec"
+            >
+          </div>
+          <div class="field-error" id="regEmailError">
+            Ingresa un correo válido
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label for="regPassword">Contraseña</label>
+          <div class="input-wrapper">
+            <span class="input-icon">🔒</span>
+            <input
+              type="password"
+              id="regPassword"
+              placeholder="Mínimo 8 caracteres"
+            >
+            <button
+              type="button"
+              class="toggle-password"
+              onclick="togglePassword('regPassword', this)"
+            >👁️</button>
+          </div>
+          <div class="field-error" id="regPasswordError">
+            La contraseña debe tener al menos 8 caracteres
+          </div>
+
+          <!-- Indicador de fortaleza -->
+          <div style="margin-top:0.5rem">
+            <div style="height:4px; border-radius:2px; background:#eee; overflow:hidden">
+              <div id="strengthBar"
+                   style="height:100%; width:0%; transition:all 0.3s; border-radius:2px">
+              </div>
+            </div>
+            <span id="strengthText"
+                  style="font-size:0.75rem; color:var(--uta-muted)">
+            </span>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label for="confirmPassword">Confirmar contraseña</label>
+          <div class="input-wrapper">
+            <span class="input-icon">🔒</span>
+            <input
+              type="password"
+              id="confirmPassword"
+              placeholder="Repite la contraseña"
+            >
+            <button
+              type="button"
+              class="toggle-password"
+              onclick="togglePassword('confirmPassword', this)"
+            >👁️</button>
+          </div>
+          <div class="field-error" id="confirmError">
+            Las contraseñas no coinciden
+          </div>
+        </div>
+
+        <div style="display:flex; gap:0.75rem">
+          <button
+            type="button"
+            class="btn-primary-uta"
+            onclick="irAlPaso1()"
+            style="background:var(--uta-muted)"
+          >
+            ← Atrás
+          </button>
+          <button
+            type="submit"
+            class="btn-primary-uta"
+            id="btnRegister"
+          >
+            <div class="btn-spinner" id="registerSpinner"></div>
+            <span id="btnRegisterText">Crear cuenta</span>
+          </button>
+        </div>
+
+      </div>
+
+    </form>
+
+    <div class="form-footer" style="margin-top:1.5rem">
+      ¿Ya tienes cuenta?
+      <a href="login.html">Inicia sesión</a>
+    </div>
+
+  </div>
+</div>
+
+<script src="js/auth.js"></script>
+</body>
+</html>
