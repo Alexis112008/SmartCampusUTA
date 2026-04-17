@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estudiante – SmartCampus</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-deep:#16a34a;
+      --green-light:#dcfce7;
+
+      --blue-light:#dbeafe;
+
+      --gray-100:#f1f5f9;
+      --gray-200:#e2e8f0;
+      --gray-400:#94a3b8;
+      --gray-600:#475569;
+      --gray-900:#0f172a;
+
+      --sidebar-w:230px;
+      --radius-sm:6px;
+      --radius-md:10px;
+      --radius-lg:14px;
+
+      --font:'DM Sans', sans-serif;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--gray-100);
+      display: flex;
+      min-height: 100vh;
+      color: var(--gray-900);
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: var(--sidebar-w);
+      background: var(--green-deep);
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      padding: 20px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .logo {
+      color: white;
+      font-weight: 600;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .nav-item {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      padding: 10px;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+    }
+
+    .nav-item:hover {
+      background: rgba(255,255,255,0.15);
+      color: white;
+    }
+
+    .sidebar-spacer { flex: 1; }
+
+    .logout-btn {
+      background: transparent;
+      border: none;
+      color: rgba(255,255,255,0.8);
+      text-align: left;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: var(--radius-sm);
+    }
+
+    .logout-btn:hover {
+      background: rgba(0,0,0,0.2);
+    }
+
+    /* MAIN */
+    .main {
+      margin-left: var(--sidebar-w);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* TOPBAR */
+    .topbar {
+      background: white;
+      padding: 14px 24px;
+      border-bottom: 1px solid var(--gray-200);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .title { font-weight: 600; }
+    .sub { font-size: 12px; color: var(--gray-400); }
+
+    .user-chip {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gray-100);
+      padding: 6px 10px;
+      border-radius: 20px;
+    }
+
+    .avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--green-light);
+      color: var(--green-deep);
+      display: grid;
+      place-items: center;
+      font-weight: 600;
+      font-size: 12px;
+    }
+
+    /* CONTENT */
+    .page {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .metric {
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 16px;
+    }
+
+    .metric h3 {
+      font-size: 13px;
+      color: var(--gray-400);
+    }
+
+    .metric p {
+      font-size: 26px;
+      font-weight: 600;
+    }
+
+    ul {
+      padding-left: 18px;
+      color: var(--gray-600);
+    }
+
+    button.primary {
+      background: var(--green-deep);
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="logo">SmartCampus Estudiante</div>
+
+  <a class="nav-item" href="#">Inicio</a>
+  <a class="nav-item" href="#">Trámites</a>
+  <a class="nav-item" href="#">Turnos</a>
+
+  <div class="sidebar-spacer"></div>
+
+  <button class="logout-btn" onclick="logout()">Cerrar sesión</button>
+</aside>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div>
+      <div class="title">Panel Estudiante</div>
+      <div class="sub" id="date"></div>
+    </div>
+
+    <div class="user-chip">
+      <div class="avatar" id="avatar">E</div>
+      <span id="userName">Estudiante</span>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <div class="page">
+
+    <!-- BIENVENIDA -->
+    <div class="card">
+      <h3>Bienvenido</h3>
+      <p id="userInfo" style="margin-top:8px;color:#475569;"></p>
+    </div>
+
+    <!-- MÉTRICAS -->
+    <div class="metrics">
+      <div class="metric">
+        <h3>Trámites activos</h3>
+        <p>3</p>
+      </div>
+
+      <div class="metric">
+        <h3>Pendientes</h3>
+        <p>1</p>
+      </div>
+
+      <div class="metric">
+        <h3>Completados</h3>
+        <p>5</p>
+      </div>
+    </div>
+
+    <!-- OPCIONES -->
+    <div class="card">
+      <h3>Opciones</h3>
+      <ul>
+        <li>Solicitar trámite</li>
+        <li>Ver estado de trámites</li>
+        <li>Ver turnos</li>
+      </ul>
+
+      <div style="margin-top:12px;">
+        <button class="primary">Ir a trámites</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const user = JSON.parse(localStorage.getItem("usuario"));
+
+  if (user) {
+    document.getElementById("userName").textContent = user.nombre;
+    document.getElementById("userInfo").textContent = `Hola, ${user.nombre}`;
+
+    const parts = user.nombre.split(" ");
+    document.getElementById("avatar").textContent =
+      parts.length > 1 ? parts[0][0] + parts[1][0] : parts[0][0];
+  }
+
+  const now = new Date();
+  document.getElementById("date").textContent =
+    now.toLocaleDateString("es-ES", { weekday:"long", year:"numeric", month:"long", day:"numeric" });
+
+  function logout(){
+    localStorage.clear();
+    window.location.href = "../login.html";
+  }
+</script>
+
+</body>
+</html>

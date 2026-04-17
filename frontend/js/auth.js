@@ -112,16 +112,22 @@ if (loginForm) {
         mostrarAlerta('alertSuccess', true);
 
         // Redirigir según rol después de 1.2s
-        setTimeout(() => {
-          const rol = data.rol.toLowerCase();
-          if (rol === 'administrador') {
-            window.location.href = 'dashboard.html';
-          } else if (rol === 'secretaria') {
-            window.location.href = 'turnos.html';
-          } else {
-            window.location.href = 'inicio.html';
-          }
-        }, 1200);
+setTimeout(() => {
+  const rol = data.rol;
+
+  if (rol === "Administrador") {
+    window.location.href = "admin/dashboard.html";
+  } 
+  else if (rol === "Docente") {
+    window.location.href = "docente/inicio.html";
+  } 
+  else if (rol === "Estudiante") {
+    window.location.href = "estudiante/inicio.html";
+  } 
+  else {
+    window.location.href = "login.html";
+  }
+}, 1200);
 
       } else {
         const error = await response.json();
@@ -323,6 +329,7 @@ if (registerForm) {
         document.getElementById('regAlertErrorMsg').textContent =
           error.mensaje || 'Error al registrar usuario';
         mostrarAlerta('regAlertError', true);
+        
       }
 
     } catch (err) {
