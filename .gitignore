@@ -1,0 +1,16 @@
+# Visual Studio
+.vs/
+
+# Build .NET
+bin/
+obj/
+
+# User files
+*.user
+*.suo
+
+# Logs
+*.log
+
+# Node (si usas frontend con npm)
+node_modules/
