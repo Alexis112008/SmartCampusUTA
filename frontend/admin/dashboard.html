@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin – SmartCampus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue-deep:   #1e3a8a;
+      --blue-mid:    #2563eb;
+      --blue-light:  #dbeafe;
+      --blue-text:   #1e40af;
+      --green-bg:    #dcfce7;
+      --green-text:  #166534;
+      --amber-bg:    #fef9c3;
+      --amber-text:  #854d0e;
+      --red-bg:      #fee2e2;
+      --red-text:    #991b1b;
+      --gray-100:    #f1f5f9;
+      --gray-200:    #e2e8f0;
+      --gray-400:    #94a3b8;
+      --gray-600:    #475569;
+      --gray-900:    #0f172a;
+      --sidebar-w:   230px;
+      --radius-sm:   6px;
+      --radius-md:   10px;
+      --radius-lg:   14px;
+      --font:        'DM Sans', sans-serif;
+      --font-mono:   'DM Mono', monospace;
+    }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: var(--font);
+      background: var(--gray-100);
+      color: var(--gray-900);
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* ── Sidebar ── */
+    .sidebar {
+      width: var(--sidebar-w);
+      min-height: 100vh;
+      background: var(--blue-deep);
+      display: flex;
+      flex-direction: column;
+      padding: 20px 14px;
+      position: fixed;
+      top: 0; left: 0;
+      gap: 4px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 8px 18px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 10px;
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: -0.2px;
+    }
+
+    .logo-icon {
+      width: 30px; height: 30px;
+      background: rgba(255,255,255,0.12);
+      border-radius: var(--radius-sm);
+      display: grid;
+      place-items: center;
+    }
+
+    .logo-icon svg { display: block; }
+
+    .nav-section {
+      font-size: 10px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.35);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 14px 10px 4px;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 10px;
+      border-radius: var(--radius-sm);
+      color: rgba(255,255,255,0.65);
+      font-size: 13.5px;
+      font-weight: 400;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      width: 100%;
+      text-align: left;
+      transition: background 0.15s, color 0.15s;
+      text-decoration: none;
+    }
+
+    .nav-item:hover { background: rgba(255,255,255,0.08); color: white; }
+    .nav-item.active { background: rgba(255,255,255,0.15); color: white; font-weight: 500; }
+
+    .nav-item svg { flex-shrink: 0; opacity: 0.75; }
+    .nav-item.active svg { opacity: 1; }
+
+    .sidebar-spacer { flex: 1; }
+
+    .logout-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 10px;
+      border-radius: var(--radius-sm);
+      color: rgba(255,255,255,0.45);
+      font-size: 13px;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      width: 100%;
+      text-align: left;
+      transition: background 0.15s, color 0.15s;
+      font-family: var(--font);
+    }
+
+    .logout-btn:hover { background: rgba(255,0,0,0.12); color: #fca5a5; }
+
+    /* ── Main content ── */
+    .main {
+      margin-left: var(--sidebar-w);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* ── Topbar ── */
+    .topbar {
+      background: white;
+      border-bottom: 1px solid var(--gray-200);
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .topbar-left { display: flex; flex-direction: column; gap: 2px; }
+    .topbar-title { font-size: 17px; font-weight: 600; color: var(--gray-900); }
+    .topbar-sub { font-size: 12px; color: var(--gray-400); }
+
+    .topbar-right { display: flex; align-items: center; gap: 12px; }
+
+    .notif-btn {
+      width: 34px; height: 34px;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-sm);
+      background: white;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      position: relative;
+      transition: background 0.15s;
+    }
+    .notif-btn:hover { background: var(--gray-100); }
+    .notif-dot {
+      position: absolute;
+      top: 7px; right: 7px;
+      width: 7px; height: 7px;
+      background: #ef4444;
+      border-radius: 50%;
+      border: 1.5px solid white;
+    }
+
+    .user-chip {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gray-100);
+      border: 1px solid var(--gray-200);
+      border-radius: 20px;
+      padding: 4px 12px 4px 4px;
+      cursor: default;
+    }
+
+    .avatar {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--blue-light);
+      display: grid;
+      place-items: center;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--blue-text);
+    }
+
+    .user-name { font-size: 13px; color: var(--gray-600); font-weight: 500; }
+
+    /* ── Page body ── */
+    .page-body { padding: 28px; display: flex; flex-direction: column; gap: 22px; }
+
+    /* ── Metric cards ── */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .metric-card {
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .metric-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 100%;
+    }
+
+    .metric-card.blue::before  { background: var(--blue-mid); }
+    .metric-card.green::before { background: #22c55e; }
+    .metric-card.amber::before { background: #f59e0b; }
+
+    .metric-icon {
+      width: 32px; height: 32px;
+      border-radius: var(--radius-sm);
+      display: grid;
+      place-items: center;
+      margin-bottom: 8px;
+    }
+
+    .metric-label { font-size: 12px; color: var(--gray-400); font-weight: 500; }
+    .metric-value { font-size: 28px; font-weight: 600; color: var(--gray-900); line-height: 1.1; }
+    .metric-tag {
+      font-size: 11px;
+      font-weight: 500;
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* ── Two-col layout ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 18px;
+      align-items: start;
+    }
+
+    /* ── Cards ── */
+    .card {
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .card-title { font-size: 14px; font-weight: 600; color: var(--gray-900); }
+
+    .see-all {
+      font-size: 12px;
+      color: var(--blue-mid);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font);
+      font-weight: 500;
+    }
+
+    .see-all:hover { text-decoration: underline; }
+
+    /* ── Table ── */
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    thead th {
+      text-align: left;
+      padding: 0 16px 10px;
+      color: var(--gray-400);
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    thead { display: table-header-group; }
+    thead tr th:first-child { padding-top: 14px; }
+
+    tbody tr td {
+      padding: 12px 16px;
+      color: var(--gray-900);
+      border-bottom: 1px solid var(--gray-200);
+      vertical-align: middle;
+    }
+
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:hover td { background: var(--gray-100); }
+
+    .user-cell { display: flex; align-items: center; gap: 10px; }
+    .user-avatar {
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 11px;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .user-fullname { font-weight: 500; font-size: 13px; }
+    .user-email { font-size: 11px; color: var(--gray-400); }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 9px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .badge-dot { width: 5px; height: 5px; border-radius: 50%; }
+
+    .badge-green { background: var(--green-bg); color: var(--green-text); }
+    .badge-green .badge-dot { background: #22c55e; }
+
+    .badge-amber { background: var(--amber-bg); color: var(--amber-text); }
+    .badge-amber .badge-dot { background: #f59e0b; }
+
+    .badge-blue { background: var(--blue-light); color: var(--blue-text); }
+    .badge-blue .badge-dot { background: var(--blue-mid); }
+
+    .date-cell { font-size: 12px; color: var(--gray-400); font-family: var(--font-mono); }
+
+    /* ── Quick access ── */
+    .quick-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      padding: 16px;
+    }
+
+    .quick-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 14px;
+      background: var(--gray-100);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s;
+      text-align: left;
+      font-family: var(--font);
+    }
+
+    .quick-btn:hover {
+      background: white;
+      border-color: var(--blue-mid);
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.08);
+    }
+
+    .quick-icon {
+      width: 32px; height: 32px;
+      border-radius: var(--radius-sm);
+      display: grid;
+      place-items: center;
+    }
+
+    .quick-label { font-size: 12px; font-weight: 500; color: var(--gray-600); }
+
+    /* ── Activity list ── */
+    .activity-list { padding: 12px 16px; display: flex; flex-direction: column; gap: 0; }
+
+    .activity-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .activity-item:last-child { border-bottom: none; }
+
+    .activity-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      margin-top: 5px;
+      flex-shrink: 0;
+    }
+
+    .activity-body { flex: 1; }
+    .activity-text { font-size: 13px; color: var(--gray-900); line-height: 1.4; }
+    .activity-time { font-size: 11px; color: var(--gray-400); margin-top: 2px; font-family: var(--font-mono); }
+
+  </style>
+</head>
+<body>
+
+<!-- ── Sidebar ── -->
+<aside class="sidebar">
+  <div class="logo">
+    <div class="logo-icon">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <rect x="1" y="1" width="6" height="6" rx="1.5" fill="white"/>
+        <rect x="9" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.55"/>
+        <rect x="1" y="9" width="6" height="6" rx="1.5" fill="white" opacity="0.55"/>
+        <rect x="9" y="9" width="6" height="6" rx="1.5" fill="white" opacity="0.3"/>
+      </svg>
+    </div>
+    SmartCampus
+  </div>
+
+  <div class="nav-section">Principal</div>
+
+  <a class="nav-item active" href="#">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M2 6.5L8 2l6 4.5V14a1 1 0 01-1 1H3a1 1 0 01-1-1V6.5z" opacity=".3"/>
+      <path d="M8 2L1.5 6.8A.5.5 0 002 7.5V14a1 1 0 001 1h10a1 1 0 001-1V7.5a.5.5 0 00.5-.7L8 2zM6 15v-4h4v4H6z"/>
+    </svg>
+    Inicio
+  </a>
+
+  <a class="nav-item" href="#">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 9a3 3 0 100-6 3 3 0 000 6zM3 14a5 5 0 0110 0H3z"/>
+    </svg>
+    Usuarios
+  </a>
+
+  <div class="nav-section">Gestión</div>
+
+  <a class="nav-item" href="#">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4 2h8a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V3a1 1 0 011-1zm1 3v1h6V5H5zm0 2v1h6V7H5zm0 2v1h4V9H5z"/>
+    </svg>
+    Trámites
+  </a>
+
+  <a class="nav-item" href="#">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M2 11h2v2H2v-2zm3-3h2v5H5V8zm3-4h2v9H8V4zm3 2h2v7h-2V6z"/>
+    </svg>
+    Reportes
+  </a>
+
+  <a class="nav-item" href="#">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 1a7 7 0 100 14A7 7 0 008 1zM7.25 4.5h1.5v4.25l2.5 1.44-.75 1.3L7.25 9.6V4.5z"/>
+    </svg>
+    Actividad
+  </a>
+
+  <a class="nav-item" href="#">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M6.5 1A1.5 1.5 0 005 2.5V3H2a1 1 0 00-1 1v9a1 1 0 001 1h12a1 1 0 001-1V4a1 1 0 00-1-1h-3v-.5A1.5 1.5 0 009.5 1h-3zm0 1h3a.5.5 0 01.5.5V3h-4v-.5a.5.5 0 01.5-.5z"/>
+    </svg>
+    Configuración
+  </a>
+
+  <div class="sidebar-spacer"></div>
+
+  <button class="logout-btn" onclick="logout()">
+    <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor">
+      <path d="M6 2H2v11h4v1H2a1 1 0 01-1-1V2a1 1 0 011-1h4v1zm2.5 2.5l4 3-4 3V9H5V6h3.5V4.5z"/>
+    </svg>
+    Cerrar sesión
+  </button>
+</aside>
+
+<!-- ── Main ── -->
+<div class="main">
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <span class="topbar-title">Panel de administración</span>
+      <span class="topbar-sub" id="dateLabel"></span>
+    </div>
+    <div class="topbar-right">
+      <button class="notif-btn" title="Notificaciones">
+        <div class="notif-dot"></div>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="#64748b">
+          <path d="M8 1a5 5 0 015 5v2.5l1 2H1l1-2V6a5 5 0 015-5zm-1 12h2a1 1 0 01-2 0z"/>
+        </svg>
+      </button>
+      <div class="user-chip">
+        <div class="avatar" id="avatarInitials">AD</div>
+        <span class="user-name" id="userName">Administrador</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page body -->
+  <div class="page-body">
+
+    <!-- Métricas -->
+    <div class="metrics-grid">
+      <div class="metric-card blue">
+        <div class="metric-icon" style="background:#dbeafe;">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="#1e40af"><path d="M8 9a3 3 0 100-6 3 3 0 000 6zM3 14a5 5 0 0110 0H3z"/></svg>
+        </div>
+        <div class="metric-label">Usuarios activos</div>
+        <div class="metric-value">1,248</div>
+        <div class="metric-tag" style="color:#16a34a;">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><path d="M6 2l4 5H2l4-5z"/></svg>
+          +12% este mes
+        </div>
+      </div>
+
+      <div class="metric-card amber">
+        <div class="metric-icon" style="background:#fef9c3;">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="#854d0e"><path d="M4 2h8a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V3a1 1 0 011-1zm1 3v1h6V5H5zm0 2v1h6V7H5zm0 2v1h4V9H5z"/></svg>
+        </div>
+        <div class="metric-label">Trámites pendientes</div>
+        <div class="metric-value">34</div>
+        <div class="metric-tag" style="color:#d97706;">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><circle cx="5" cy="5" r="4"/></svg>
+          8 urgentes
+        </div>
+      </div>
+
+      <div class="metric-card green">
+        <div class="metric-icon" style="background:#dcfce7;">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="#166534"><path d="M13.5 3L6 11 2.5 7.5l-1 1L6 13l8.5-9-1-1z"/></svg>
+        </div>
+        <div class="metric-label">Resueltos hoy</div>
+        <div class="metric-value">17</div>
+        <div class="metric-tag" style="color:#64748b;">
+          Meta diaria: 20
+        </div>
+      </div>
+    </div>
+
+    <!-- Two-col -->
+    <div class="two-col">
+
+      <!-- Trámites recientes -->
+      <div class="card">
+        <div class="card-head">
+          <span class="card-title">Trámites recientes</span>
+          <button class="see-all">Ver todos →</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Estudiante</th>
+              <th>Tipo de trámite</th>
+              <th>Estado</th>
+              <th>Fecha</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="user-cell">
+                  <div class="user-avatar" style="background:#dbeafe;color:#1e40af;">MP</div>
+                  <div>
+                    <div class="user-fullname">María Pérez</div>
+                    <div class="user-email">m.perez@campus.edu</div>
+                  </div>
+                </div>
+              </td>
+              <td>Certificado de notas</td>
+              <td><span class="badge badge-green"><span class="badge-dot"></span>Aprobado</span></td>
+              <td class="date-cell">Hoy 10:14</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="user-cell">
+                  <div class="user-avatar" style="background:#fef9c3;color:#854d0e;">CR</div>
+                  <div>
+                    <div class="user-fullname">Carlos Ruiz</div>
+                    <div class="user-email">c.ruiz@campus.edu</div>
+                  </div>
+                </div>
+              </td>
+              <td>Retiro de materia</td>
+              <td><span class="badge badge-amber"><span class="badge-dot"></span>Pendiente</span></td>
+              <td class="date-cell">Hoy 09:45</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="user-cell">
+                  <div class="user-avatar" style="background:#dcfce7;color:#166534;">SL</div>
+                  <div>
+                    <div class="user-fullname">Sofía León</div>
+                    <div class="user-email">s.leon@campus.edu</div>
+                  </div>
+                </div>
+              </td>
+              <td>Beca académica</td>
+              <td><span class="badge badge-blue"><span class="badge-dot"></span>En revisión</span></td>
+              <td class="date-cell">Ayer 17:22</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="user-cell">
+                  <div class="user-avatar" style="background:#fee2e2;color:#991b1b;">JM</div>
+                  <div>
+                    <div class="user-fullname">José Mora</div>
+                    <div class="user-email">j.mora@campus.edu</div>
+                  </div>
+                </div>
+              </td>
+              <td>Homologación</td>
+              <td><span class="badge badge-amber"><span class="badge-dot"></span>Pendiente</span></td>
+              <td class="date-cell">Ayer 14:05</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Right column -->
+      <div style="display:flex;flex-direction:column;gap:18px;">
+
+        <!-- Acceso rápido -->
+        <div class="card">
+          <div class="card-head">
+            <span class="card-title">Acceso rápido</span>
+          </div>
+          <div class="quick-grid">
+            <button class="quick-btn">
+              <div class="quick-icon" style="background:#dbeafe;">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="#1e40af"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm1 4H7v2H5v2h2v2h2V9h2V7h-2V5z"/></svg>
+              </div>
+              <span class="quick-label">Nuevo usuario</span>
+            </button>
+            <button class="quick-btn">
+              <div class="quick-icon" style="background:#dcfce7;">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="#166534"><path d="M4 2h8a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V3a1 1 0 011-1zm1 5h6V6H5v1zm0 2h6V8H5v1zm0 2h4v-1H5v1z"/></svg>
+              </div>
+              <span class="quick-label">Nuevo trámite</span>
+            </button>
+            <button class="quick-btn">
+              <div class="quick-icon" style="background:#fef9c3;">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="#854d0e"><path d="M2 11h2v2H2v-2zm3-3h2v5H5V8zm3-4h2v9H8V4zm3 2h2v7h-2V6z"/></svg>
+              </div>
+              <span class="quick-label">Ver reporte</span>
+            </button>
+            <button class="quick-btn">
+              <div class="quick-icon" style="background:#f1f5f9;">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="#475569"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm.75 3.5v4.25l3 1.73-.75 1.3-3.5-2.02V4.5h1.25z"/></svg>
+              </div>
+              <span class="quick-label">Actividad</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Actividad reciente -->
+        <div class="card">
+          <div class="card-head">
+            <span class="card-title">Actividad reciente</span>
+          </div>
+          <div class="activity-list">
+            <div class="activity-item">
+              <div class="activity-dot" style="background:#22c55e;"></div>
+              <div class="activity-body">
+                <div class="activity-text">Trámite de <strong>María Pérez</strong> aprobado</div>
+                <div class="activity-time">Hace 20 min</div>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-dot" style="background:#3b82f6;"></div>
+              <div class="activity-body">
+                <div class="activity-text">Nuevo usuario registrado: <strong>Luis Andrade</strong></div>
+                <div class="activity-time">Hace 1 hora</div>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-dot" style="background:#f59e0b;"></div>
+              <div class="activity-body">
+                <div class="activity-text">Solicitud de beca marcada como urgente</div>
+                <div class="activity-time">Hace 2 horas</div>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-dot" style="background:#94a3b8;"></div>
+              <div class="activity-body">
+                <div class="activity-text">Reporte mensual generado</div>
+                <div class="activity-time">Ayer 16:00</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /page-body -->
+</div><!-- /main -->
+
+<script>
+  // Cargar datos del usuario desde localStorage
+  const user = JSON.parse(localStorage.getItem("usuario"));
+
+  if (user) {
+    const name = user.nombre || "Administrador";
+    document.getElementById("userName").textContent = name;
+
+    const parts = name.trim().split(" ");
+    const initials = parts.length >= 2
+      ? parts[0][0] + parts[1][0]
+      : parts[0].substring(0, 2);
+    document.getElementById("avatarInitials").textContent = initials.toUpperCase();
+  }
+
+  // Fecha en topbar
+  const now = new Date();
+  const opts = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
+  document.getElementById("dateLabel").textContent =
+    now.toLocaleDateString("es-ES", opts).replace(/^\w/, c => c.toUpperCase());
+
+  // Cerrar sesión
+  function logout() {
+    localStorage.clear();
+    window.location.href = "../login.html";
+  }
+</script>
+
+</body>
+</html>

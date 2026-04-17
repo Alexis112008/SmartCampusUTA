@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using SmartCampus.API.Domain.Entities;
 using SmartCampus.API.DTOs;
 using SmartCampus.API.Persistence.Context;
@@ -58,20 +59,26 @@ namespace SmartCampus.API.Controllers
         public IActionResult Login([FromBody] LoginDto login)
         {
             var user = _context.Usuarios
-                .FirstOrDefault(u => u.Email == login.Email && u.PasswordHash == login.Password);
+                .Include(u => u.Rol)
+                .FirstOrDefault(u =>
+                    u.Email == login.Email &&
+                    u.PasswordHash == login.PasswordHash);
 
             if (user == null)
             {
                 return Unauthorized(new { mensaje = "Credenciales incorrectas" });
             }
 
-            return Ok(new
+            var response = new LoginResponseDto
             {
-                idUsuario = user.IdUsuario,
-                nombre = user.Nombre,
-                rol = user.IdRol,
-                token = "fake-token"
-            });
+                IdUsuario = user.IdUsuario,
+                Nombre = user.Nombre,
+                Email = user.Email,
+                Rol = user.Rol.NombreRol,
+                Token = "fake-token"
+            };
+
+            return Ok(response);
         }
     }
 }
