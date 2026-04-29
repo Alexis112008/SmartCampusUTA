@@ -3,204 +3,387 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Docente – SmartCampus</title>
-
+  <title>Docente – SmartCampus UTA</title>
+  <link rel="stylesheet" href="../css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --blue-deep:#1e3a8a;
-      --blue-mid:#2563eb;
-      --blue-light:#dbeafe;
-      --gray-100:#f1f5f9;
-      --gray-200:#e2e8f0;
-      --gray-400:#94a3b8;
-      --gray-600:#475569;
-      --gray-900:#0f172a;
-
-      --sidebar-w:230px;
-      --radius-sm:6px;
-      --radius-md:10px;
-      --radius-lg:14px;
-
-      --font:'DM Sans', sans-serif;
-      --font-mono:'DM Mono', monospace;
-    }
-
     body {
-      font-family: var(--font);
-      background: var(--gray-100);
-      color: var(--gray-900);
+      font-family: 'Inter', sans-serif;
+      background: var(--uta-light);
+      color: var(--uta-text);
       display: flex;
       min-height: 100vh;
+      overflow-x: hidden;
     }
 
-    /* SIDEBAR */
+    /* Sidebar */
     .sidebar {
-      width: var(--sidebar-w);
-      background: var(--blue-deep);
+      width: 280px;
+      background: linear-gradient(180deg, var(--uta-primary) 0%, var(--uta-secondary) 100%);
       position: fixed;
       top: 0;
       left: 0;
       height: 100vh;
-      padding: 20px 14px;
+      padding: 2rem 1.5rem;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      box-shadow: var(--shadow-md);
+      z-index: 1000;
     }
 
-    .logo {
-      color: white;
-      font-weight: 600;
-      margin-bottom: 10px;
-      padding-bottom: 10px;
+    .sidebar .logo {
+      color: var(--uta-white);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      text-align: center;
+      padding-bottom: 1rem;
       border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
-    .nav-item {
-      color: rgba(255,255,255,0.7);
-      padding: 10px;
-      border-radius: var(--radius-sm);
+    .sidebar .nav-item {
+      color: rgba(255,255,255,0.8);
       text-decoration: none;
-      font-size: 14px;
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-sm);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      transition: all 0.3s ease;
+      font-weight: 500;
     }
 
-    .nav-item:hover { background: rgba(255,255,255,0.1); color: white; }
+    .sidebar .nav-item:hover,
+    .sidebar .nav-item.active {
+      background: rgba(255,255,255,0.1);
+      color: var(--uta-white);
+      transform: translateX(5px);
+    }
+
+    .sidebar .nav-item i {
+      width: 20px;
+      text-align: center;
+    }
 
     .sidebar-spacer { flex: 1; }
 
-    .logout-btn {
-      background: transparent;
+    .sidebar .logout-btn {
+      background: rgba(255,255,255,0.1);
       border: none;
-      color: rgba(255,255,255,0.7);
-      text-align: left;
-      padding: 10px;
-      cursor: pointer;
+      color: rgba(255,255,255,0.8);
+      padding: 0.75rem 1rem;
       border-radius: var(--radius-sm);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      margin-top: auto;
     }
 
-    .logout-btn:hover { background: rgba(255,0,0,0.15); color: #fff; }
+    .sidebar .logout-btn:hover {
+      background: var(--uta-danger);
+      color: var(--uta-white);
+    }
 
-    /* MAIN */
+    /* Main content */
     .main {
-      margin-left: var(--sidebar-w);
+      margin-left: 280px;
       flex: 1;
       display: flex;
       flex-direction: column;
+      min-height: 100vh;
     }
 
-    /* TOPBAR */
+    /* Topbar */
     .topbar {
-      background: white;
-      padding: 14px 24px;
-      border-bottom: 1px solid var(--gray-200);
+      background: var(--uta-white);
+      padding: 1rem 2rem;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
       display: flex;
       justify-content: space-between;
       align-items: center;
+      box-shadow: var(--shadow-sm);
       position: sticky;
       top: 0;
+      z-index: 100;
     }
 
-    .title { font-weight: 600; }
-    .sub { font-size: 12px; color: var(--gray-400); }
+    .topbar .title-section h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--uta-primary);
+      margin: 0;
+    }
 
-    .user-chip {
+    .topbar .title-section p {
+      font-size: 0.875rem;
+      color: var(--uta-muted);
+      margin: 0.25rem 0 0 0;
+    }
+
+    .topbar .user-info {
       display: flex;
       align-items: center;
-      gap: 10px;
-      background: var(--gray-100);
-      padding: 5px 10px;
-      border-radius: 20px;
+      gap: 1rem;
     }
 
-    .avatar {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: var(--blue-light);
-      display: grid;
-      place-items: center;
-      font-weight: 600;
-      color: var(--blue-mid);
-      font-size: 12px;
-    }
-
-    /* CONTENT */
-    .page {
-      padding: 24px;
+    .topbar .user-chip {
       display: flex;
-      flex-direction: column;
-      gap: 18px;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--uta-light);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      border: 1px solid rgba(0,0,0,0.05);
     }
 
-    .card {
-      background: white;
-      border: 1px solid var(--gray-200);
-      border-radius: var(--radius-lg);
-      padding: 18px;
+    .topbar .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--uta-secondary), var(--uta-accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--uta-white);
+      font-weight: 600;
+      font-size: 1rem;
     }
 
-    .metrics {
+    .topbar .user-details h4 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--uta-text);
+      margin: 0;
+    }
+
+    .topbar .user-details p {
+      font-size: 0.75rem;
+      color: var(--uta-muted);
+      margin: 0.25rem 0 0 0;
+    }
+
+    /* Page content */
+    .page {
+      padding: 2rem;
+      flex: 1;
+    }
+
+    .welcome-card {
+      background: var(--uta-white);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+      border-left: 4px solid var(--uta-accent);
+    }
+
+    .welcome-card h2 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--uta-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .welcome-card p {
+      color: var(--uta-muted);
+      font-size: 1rem;
+    }
+
+    /* Metrics grid */
+    .metrics-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
     }
 
-    .metric {
-      background: white;
-      border: 1px solid var(--gray-200);
-      border-radius: var(--radius-lg);
-      padding: 16px;
+    .metric-card {
+      background: var(--uta-white);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .metric h3 { font-size: 13px; color: var(--gray-400); }
-    .metric p { font-size: 26px; font-weight: 600; }
+    .metric-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
 
-    ul { padding-left: 18px; color: var(--gray-600); }
-
-    button.primary {
-      background: var(--blue-mid);
-      color: white;
-      border: none;
-      padding: 10px 14px;
+    .metric-card .icon {
+      width: 50px;
+      height: 50px;
       border-radius: var(--radius-sm);
-      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .metric-card .icon.assigned { background: linear-gradient(135deg, var(--uta-secondary), var(--uta-accent)); color: var(--uta-white); }
+    .metric-card .icon.pending { background: linear-gradient(135deg, #f59e0b, #d97706); color: var(--uta-white); }
+    .metric-card .icon.resolved { background: linear-gradient(135deg, var(--uta-success), #16a34a); color: var(--uta-white); }
+
+    .metric-card h3 {
+      font-size: 0.875rem;
+      color: var(--uta-muted);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .metric-card .value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--uta-text);
+    }
+
+    /* Actions section */
+    .actions-card {
+      background: var(--uta-white);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .actions-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--uta-primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .actions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .action-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      border: 1px solid rgba(0,0,0,0.05);
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      color: var(--uta-text);
+      transition: all 0.3s ease;
+    }
+
+    .action-item:hover {
+      background: var(--uta-light);
+      border-color: var(--uta-secondary);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .action-item i {
+      font-size: 1.5rem;
+      color: var(--uta-secondary);
+    }
+
+    .action-item .content h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 0.25rem 0;
+    }
+
+    .action-item .content p {
+      font-size: 0.875rem;
+      color: var(--uta-muted);
+      margin: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        position: static;
+        height: auto;
+        padding: 1rem;
+      }
+
+      .main {
+        margin-left: 0;
+      }
+
+      .topbar {
+        padding: 1rem;
+      }
+
+      .page {
+        padding: 1rem;
+      }
+
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .actions-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 
 <body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">
+      <i class="fas fa-graduation-cap"></i>
+      SmartCampus UTA
+    </div>
 
-<!-- SIDEBAR -->
-<aside class="sidebar">
-  <div class="logo">SmartCampus Docente</div>
+    <nav>
+      <a class="nav-item active" href="#">
+        <i class="fas fa-home"></i>
+        Inicio
+      </a>
+      <a class="nav-item" href="#">
+        <i class="fas fa-file-alt"></i>
+        Trámites
+      </a>
+      <a class="nav-item" href="#">
+        <i class="fas fa-clock"></i>
+        Turnos
+      </a>
+      <a class="nav-item" href="#">
+        <i class="fas fa-history"></i>
+        Historial
+      </a>
+    </nav>
 
-  <a class="nav-item" href="#">Inicio</a>
-  <a class="nav-item" href="#">Trámites</a>
-  <a class="nav-item" href="#">Turnos</a>
-  <a class="nav-item" href="#">Historial</a>
-
-  <div class="sidebar-spacer"></div>
-
-  <button class="logout-btn" onclick="logout()">Cerrar sesión</button>
-</aside>
+    <button class="logout-btn" onclick="logout()">
+      <i class="fas fa-sign-out-alt"></i>
+      Cerrar sesión
+    </button>
+  </aside>
 
 <!-- MAIN -->
 <div class="main">
 
   <!-- TOPBAR -->
   <header class="topbar">
-    <div>
-      <div class="title">Panel Docente</div>
-      <div class="sub" id="date"></div>
+    <div class="title-section">
+      <h1>Panel Docente</h1>
+      <p id="date"></p>
     </div>
 
-    <div class="user-chip">
-      <div class="avatar" id="avatar">D</div>
-      <span id="userName">Docente</span>
+    <div class="user-info">
+      <div class="user-chip">
+        <div class="avatar" id="avatar">D</div>
+        <div class="user-details">
+          <h4 id="userName">Docente</h4>
+          <p>Profesor</p>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -208,40 +391,73 @@
   <div class="page">
 
     <!-- BIENVENIDA -->
-    <div class="card">
-      <h3>Bienvenido</h3>
-      <p id="userInfo" style="margin-top:8px;color:#475569;"></p>
+    <div class="welcome-card">
+      <h2>¡Bienvenido de vuelta!</h2>
+      <p id="userInfo">Hola, Docente. Aquí tienes un resumen de tu actividad reciente.</p>
     </div>
 
     <!-- MÉTRICAS -->
-    <div class="metrics">
-      <div class="metric">
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="icon assigned">
+          <i class="fas fa-tasks"></i>
+        </div>
         <h3>Trámites asignados</h3>
-        <p>12</p>
+        <div class="value">12</div>
       </div>
 
-      <div class="metric">
+      <div class="metric-card">
+        <div class="icon pending">
+          <i class="fas fa-hourglass-half"></i>
+        </div>
         <h3>Pendientes</h3>
-        <p>5</p>
+        <div class="value">5</div>
       </div>
 
-      <div class="metric">
+      <div class="metric-card">
+        <div class="icon resolved">
+          <i class="fas fa-check-circle"></i>
+        </div>
         <h3>Resueltos</h3>
-        <p>7</p>
+        <div class="value">7</div>
       </div>
     </div>
 
     <!-- FUNCIONES -->
-    <div class="card">
-      <h3>Funciones</h3>
-      <ul>
-        <li>Revisar trámites</li>
-        <li>Gestionar turnos</li>
-        <li>Ver historial</li>
-      </ul>
+    <div class="actions-card">
+      <h3>Acciones rápidas</h3>
+      <div class="actions-grid">
+        <a class="action-item" href="#">
+          <i class="fas fa-file-alt"></i>
+          <div class="content">
+            <h4>Revisar trámites</h4>
+            <p>Gestiona los trámites asignados</p>
+          </div>
+        </a>
 
-      <div style="margin-top:12px;">
-        <button class="primary">Ir a trámites</button>
+        <a class="action-item" href="#">
+          <i class="fas fa-clock"></i>
+          <div class="content">
+            <h4>Gestionar turnos</h4>
+            <p>Administra los turnos de estudiantes</p>
+          </div>
+        </a>
+
+        <a class="action-item" href="#">
+          <i class="fas fa-history"></i>
+          <div class="content">
+            <h4>Ver historial</h4>
+            <p>Revisa el historial de actividades</p>
+          </div>
+        </a>
+
+        <a class="action-item" href="#">
+          <i class="fas fa-chart-bar"></i>
+          <div class="content">
+            <h4>Reportes</h4>
+            <p>Genera reportes de rendimiento</p>
+          </div>
+        </a>
       </div>
     </div>
 
@@ -253,7 +469,7 @@
 
   if (user) {
     document.getElementById("userName").textContent = user.nombre;
-    document.getElementById("userInfo").textContent = `Hola, ${user.nombre}`;
+    document.getElementById("userInfo").textContent = `Hola, ${user.nombre}. Aquí tienes un resumen de tu actividad reciente.`;
 
     const parts = user.nombre.split(" ");
     document.getElementById("avatar").textContent =
@@ -262,9 +478,9 @@
 
   const now = new Date();
   document.getElementById("date").textContent =
-    now.toLocaleDateString("es-ES", { weekday:"long", year:"numeric", month:"long", day:"numeric" });
+    now.toLocaleDateString("es-ES", { weekday: "long", year: "numeric", month: "long", day: "numeric" });
 
-  function logout(){
+  function logout() {
     localStorage.clear();
     window.location.href = "../login.html";
   }
