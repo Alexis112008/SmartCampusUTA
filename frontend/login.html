@@ -3,56 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SmartCampus UTA — Iniciar sesión</title>
+  <title>SmartCampus FISEI — Iniciar sesión</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
 <div class="auth-wrapper">
 
-  <!-- Panel izquierdo: branding -->
-  <div class="auth-brand">
-    <div class="brand-logo">🎓</div>
-    <div class="brand-title">SmartCampus UTA</div>
-    <div class="brand-subtitle">
-      Sistema integrado de gestión universitaria
-    </div>
-
-    <div class="brand-features">
-      <div class="brand-feature">
-        <div class="feature-icon">📋</div>
-        Gestión de trámites y solicitudes
-      </div>
-      <div class="brand-feature">
-        <div class="feature-icon">🎫</div>
-        Sistema de turnos inteligente
-      </div>
-      <div class="brand-feature">
-        <div class="feature-icon">🗺️</div>
-        Mapa interactivo del campus
-      </div>
-      <div class="brand-feature">
-        <div class="feature-icon">📁</div>
-        Organización de documentos
-      </div>
-    </div>
-  </div>
-
-  <!-- Panel derecho: formulario -->
+  <!-- PANEL IZQUIERDO: formulario -->
   <div class="auth-form-panel">
 
+<div class="form-logo" style="text-align: center; margin-bottom: 1.5rem;">
+  <img src="img/fisei.jpg" alt="Sello UTA" class="logo-img" style="width: 100px; height: auto;">
+  <span class="logo-text" style="display: block; font-size: 1.5rem; font-weight: bold; margin-top: 0.5rem;">SmartCampus FISEI</span>
+</div>
+
     <div class="form-header">
-      <h2>Bienvenido de vuelta</h2>
-      <p>Ingresa tus credenciales para acceder al sistema</p>
+      <h2>Bienvenido</h2>
+      <p>Ingresa tus credenciales para continuar</p>
     </div>
 
-    <!-- Alerta de error -->
     <div class="alert-box alert-danger" id="alertError">
       <span>⚠️</span>
       <span id="alertErrorMsg">Credenciales incorrectas</span>
     </div>
-
-    <!-- Alerta de éxito -->
     <div class="alert-box alert-success" id="alertSuccess">
       <span>✅</span>
       <span>Inicio de sesión exitoso. Redirigiendo...</span>
@@ -60,59 +34,33 @@
 
     <form id="loginForm" novalidate>
 
-      <!-- Email -->
       <div class="field-group">
         <label for="email">Correo institucional</label>
         <div class="input-wrapper">
           <span class="input-icon">✉️</span>
-          <input
-            type="email"
-            id="email"
-            placeholder="usuario@uta.edu.ec"
-            autocomplete="email"
-          >
+          <input type="email" id="email" placeholder="usuario@uta.edu.ec" autocomplete="email">
         </div>
-        <div class="field-error" id="emailError">
-          Ingresa un correo válido
-        </div>
+        <div class="field-error" id="emailError">Ingresa un correo válido</div>
       </div>
 
-      <!-- Contraseña -->
       <div class="field-group">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem">
-          <label for="password" style="margin:0">Contraseña</label>
-          <a href="forgot-password.html" class="forgot-link">
-            ¿Olvidaste tu contraseña?
-          </a>
+        <div class="label-row">
+          <label for="password">Contraseña</label>
+          <a href="forgot-password.html" class="forgot-link">¿Olvidaste tu contraseña?</a>
         </div>
         <div class="input-wrapper">
           <span class="input-icon">🔒</span>
-          <input
-            type="password"
-            id="password"
-            placeholder="Ingresa tu contraseña"
-            autocomplete="current-password"
-          >
-          <button
-            type="button"
-            class="toggle-password"
-            onclick="togglePassword('password', this)"
-          >👁️</button>
+          <input type="password" id="password" placeholder="Ingresa tu contraseña" autocomplete="current-password">
+          <button type="button" class="toggle-password" onclick="togglePassword('password', this)">👁️</button>
         </div>
-        <div class="field-error" id="passwordError">
-          La contraseña es obligatoria
-        </div>
+        <div class="field-error" id="passwordError">La contraseña es obligatoria</div>
       </div>
 
-      <!-- Recordarme -->
-      <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:1rem">
-        <input type="checkbox" id="remember" style="width:16px; height:16px; cursor:pointer">
-        <label for="remember" style="font-size:0.875rem; cursor:pointer; margin:0">
-          Recordar mi sesión
-        </label>
+      <div class="remember-row">
+        <input type="checkbox" id="remember">
+        <label for="remember">Recordar mi sesión</label>
       </div>
 
-      <!-- Botón -->
       <button type="submit" class="btn-primary-uta" id="btnLogin">
         <div class="btn-spinner" id="loginSpinner"></div>
         <span id="btnLoginText">Iniciar sesión</span>
@@ -120,18 +68,39 @@
 
     </form>
 
-    <div class="divider">o</div>
-
-    <div class="form-footer">
-      ¿No tienes cuenta?
-      <a href="register.html">Regístrate aquí</a>
-    </div>
-
-    <div style="text-align:center; margin-top:2rem; font-size:0.8rem; color:var(--uta-muted)">
-      Universidad Técnica de Ambato © 2024
-    </div>
-
   </div>
+
+  <!-- PANEL DERECHO: branding -->
+  <div class="auth-brand">
+    <div class="brand-tag">Sistema universitario</div>
+    <div class="brand-headline">Gestión<br>universitaria<br><span>inteligente</span></div>
+    <div class="brand-sub">Accede a todos los servicios del campus desde un solo lugar.</div>
+
+    <div class="brand-features">
+      <div class="brand-feature">
+        <div class="feature-icon">📋</div>
+        Trámites y solicitudes
+      </div>
+      <div class="brand-feature">
+        <div class="feature-icon">🎫</div>
+        Sistema de turnos
+      </div>
+      <div class="brand-feature">
+        <div class="feature-icon">🗺️</div>
+        Mapa interactivo
+      </div>
+      <div class="brand-feature">
+        <div class="feature-icon">📁</div>
+        Gestión de documentos
+      </div>
+    </div>
+
+    <div class="brand-cta">
+      <p>¿No tienes una cuenta aún?</p>
+      <a href="register.html" class="btn-register">Registrarse</a>
+    </div>
+  </div>
+
 </div>
 
 <script src="js/auth.js"></script>
