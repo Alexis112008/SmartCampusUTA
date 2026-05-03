@@ -1,5 +1,4 @@
 const API = 'https://localhost:7001/api';
-// Cambia el puerto al que usa tu proyecto en Visual Studio
 
 // ─── UTILIDADES ───────────────────────────────────────────
 
@@ -46,8 +45,6 @@ function togglePassword(inputId, btn) {
   }
 }
 
-// Hash SHA-256 simple para el frontend
-// En producción el backend siempre rehashea con BCrypt
 async function hashPassword(password) {
   const msgBuffer = new TextEncoder().encode(password);
   const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
@@ -59,7 +56,6 @@ async function hashPassword(password) {
 
 const loginForm = document.getElementById('loginForm');
 if (loginForm) {
-
   loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -67,7 +63,6 @@ if (loginForm) {
     const password = document.getElementById('password').value;
     let valido = true;
 
-    // Validaciones
     mostrarAlerta('alertError', false);
     mostrarAlerta('alertSuccess', false);
 
@@ -101,7 +96,6 @@ if (loginForm) {
       if (response.ok) {
         const data = await response.json();
 
-        // Guardar sesión
         localStorage.setItem('token', data.token);
         localStorage.setItem('usuario', JSON.stringify({
           id: data.idUsuario,
@@ -111,23 +105,13 @@ if (loginForm) {
 
         mostrarAlerta('alertSuccess', true);
 
-        // Redirigir según rol después de 1.2s
-setTimeout(() => {
-  const rol = data.rol;
-
-  if (rol === "Administrador") {
-    window.location.href = "admin/dashboard.html";
-  } 
-  else if (rol === "Docente") {
-    window.location.href = "docente/inicio.html";
-  } 
-  else if (rol === "Estudiante") {
-    window.location.href = "estudiante/inicio.html";
-  } 
-  else {
-    window.location.href = "login.html";
-  }
-}, 1200);
+        setTimeout(() => {
+          const rol = data.rol;
+          if (rol === 'Administrador') window.location.href = 'admin/dashboard.html';
+          else if (rol === 'Docente')  window.location.href = 'docente/inicio.html';
+          else if (rol === 'Estudiante') window.location.href = 'estudiante/inicio.html';
+          else window.location.href = 'login.html';
+        }, 1200);
 
       } else {
         const error = await response.json();
@@ -137,7 +121,6 @@ setTimeout(() => {
       }
 
     } catch (err) {
-      // Si el backend no responde, modo demo con datos quemados
       console.warn('Backend no disponible, usando modo demo');
       loginDemo(email, password);
     } finally {
@@ -146,7 +129,6 @@ setTimeout(() => {
   });
 }
 
-// Modo demo: funciona sin backend para la presentación
 function loginDemo(email, password) {
   const usuarios = [
     { email: 'admin@uta.edu.ec',      password: 'admin123',  rol: 'Administrador', nombre: 'Admin UTA' },
@@ -154,16 +136,12 @@ function loginDemo(email, password) {
     { email: 'estudiante@uta.edu.ec', password: 'estud123',  rol: 'Estudiante',    nombre: 'Juan Pérez' },
   ];
 
-  const usuario = usuarios.find(
-    u => u.email === email && u.password === password
-  );
+  const usuario = usuarios.find(u => u.email === email && u.password === password);
 
   if (usuario) {
     localStorage.setItem('usuario', JSON.stringify(usuario));
     mostrarAlerta('alertSuccess', true);
-    setTimeout(() => {
-      window.location.href = 'dashboard.html';
-    }, 1200);
+    setTimeout(() => { window.location.href = 'dashboard.html'; }, 1200);
   } else {
     document.getElementById('alertErrorMsg').textContent =
       'Credenciales incorrectas. Modo demo: usa admin@uta.edu.ec / admin123';
@@ -174,7 +152,6 @@ function loginDemo(email, password) {
 
 // ─── REGISTRO ─────────────────────────────────────────────
 
-// Mostrar campos de estudiante al seleccionar rol
 const rolSelect = document.getElementById('rol');
 if (rolSelect) {
   rolSelect.addEventListener('change', () => {
@@ -185,7 +162,6 @@ if (rolSelect) {
   });
 }
 
-// Indicador de fortaleza de contraseña
 const regPassword = document.getElementById('regPassword');
 if (regPassword) {
   regPassword.addEventListener('input', () => {
@@ -194,9 +170,9 @@ if (regPassword) {
     const text = document.getElementById('strengthText');
 
     let score = 0;
-    if (val.length >= 8)  score++;
-    if (/[A-Z]/.test(val)) score++;
-    if (/[0-9]/.test(val)) score++;
+    if (val.length >= 8)          score++;
+    if (/[A-Z]/.test(val))        score++;
+    if (/[0-9]/.test(val))        score++;
     if (/[^A-Za-z0-9]/.test(val)) score++;
 
     const niveles = [
@@ -207,39 +183,33 @@ if (regPassword) {
       { pct: '100%', color: 'var(--uta-success)', label: 'Fuerte ✓' },
     ];
 
-    bar.style.width = niveles[score].pct;
+    bar.style.width     = niveles[score].pct;
     bar.style.background = niveles[score].color;
-    text.textContent = niveles[score].label;
-    text.style.color = niveles[score].color;
+    text.textContent    = niveles[score].label;
+    text.style.color    = niveles[score].color;
   });
 }
 
 function irAlPaso2() {
   const nombre = document.getElementById('nombre')?.value.trim();
   const cedula = document.getElementById('cedula')?.value.trim();
-  const rol = document.getElementById('rol')?.value;
+  const rol    = document.getElementById('rol')?.value;
   let valido = true;
 
   if (!nombre) {
     mostrarError('nombreError', 'El nombre es obligatorio');
     valido = false;
-  } else {
-    mostrarError('nombreError', null);
-  }
+  } else { mostrarError('nombreError', null); }
 
   if (!cedula || !/^\d{10}$/.test(cedula)) {
     mostrarError('cedulaError', 'Ingresa una cédula de 10 dígitos');
     valido = false;
-  } else {
-    mostrarError('cedulaError', null);
-  }
+  } else { mostrarError('cedulaError', null); }
 
   if (!rol) {
     mostrarError('rolError', 'Selecciona un tipo de usuario');
     valido = false;
-  } else {
-    mostrarError('rolError', null);
-  }
+  } else { mostrarError('rolError', null); }
 
   if (!valido) return;
 
@@ -267,9 +237,9 @@ if (registerForm) {
   registerForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const email = document.getElementById('regEmail')?.value.trim();
+    const email    = document.getElementById('regEmail')?.value.trim();
     const password = document.getElementById('regPassword')?.value;
-    const confirm = document.getElementById('confirmPassword')?.value;
+    const confirm  = document.getElementById('confirmPassword')?.value;
     let valido = true;
 
     mostrarAlerta('regAlertError', false);
@@ -277,24 +247,17 @@ if (registerForm) {
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       mostrarError('regEmailError', 'Ingresa un correo válido');
       valido = false;
-    } else {
-      mostrarError('regEmailError', null);
-    }
+    } else { mostrarError('regEmailError', null); }
 
     if (!password || password.length < 8) {
-      mostrarError('regPasswordError',
-        'La contraseña debe tener al menos 8 caracteres');
+      mostrarError('regPasswordError', 'La contraseña debe tener al menos 8 caracteres');
       valido = false;
-    } else {
-      mostrarError('regPasswordError', null);
-    }
+    } else { mostrarError('regPasswordError', null); }
 
     if (password !== confirm) {
       mostrarError('confirmError', 'Las contraseñas no coinciden');
       valido = false;
-    } else {
-      mostrarError('confirmError', null);
-    }
+    } else { mostrarError('confirmError', null); }
 
     if (!valido) return;
 
@@ -304,12 +267,12 @@ if (registerForm) {
       const hash = await hashPassword(password);
 
       const body = {
-        nombre: document.getElementById('nombre')?.value.trim(),
+        nombre:   document.getElementById('nombre')?.value.trim(),
         email,
         passwordHash: hash,
-        idRol: parseInt(document.getElementById('rol')?.value),
-        cedula: document.getElementById('cedula')?.value.trim(),
-        carrera: document.getElementById('carrera')?.value || null,
+        idRol:    parseInt(document.getElementById('rol')?.value),
+        cedula:   document.getElementById('cedula')?.value.trim(),
+        carrera:  document.getElementById('carrera')?.value || null,
         semestre: parseInt(document.getElementById('semestre')?.value) || 0
       };
 
@@ -321,19 +284,15 @@ if (registerForm) {
 
       if (response.ok) {
         mostrarAlerta('regAlertSuccess', true);
-        setTimeout(() => {
-          window.location.href = 'login.html';
-        }, 2000);
+        setTimeout(() => { window.location.href = 'login.html'; }, 2000);
       } else {
         const error = await response.json();
         document.getElementById('regAlertErrorMsg').textContent =
           error.mensaje || 'Error al registrar usuario';
         mostrarAlerta('regAlertError', true);
-        
       }
 
     } catch (err) {
-      // Modo demo
       mostrarAlerta('regAlertSuccess', true);
       setTimeout(() => { window.location.href = 'login.html'; }, 2000);
     } finally {
@@ -344,39 +303,151 @@ if (registerForm) {
 
 // ─── RECUPERAR CONTRASEÑA ─────────────────────────────────
 
+let emailRecuperacion = '';
+
 const forgotForm = document.getElementById('forgotForm');
 if (forgotForm) {
   forgotForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const email = document.getElementById('fpEmail')?.value.trim();
-    mostrarAlerta('fpAlertError', false);
+    mostrarError('fpEmailError', null);
 
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       mostrarError('fpEmailError', 'Ingresa un correo válido');
       return;
     }
-    mostrarError('fpEmailError', null);
 
     setLoading('btnForgot', 'forgotSpinner', 'btnForgotText', true);
 
-    // Simulación: en producción llama al endpoint real
-    await new Promise(r => setTimeout(r, 1500));
-
-    document.getElementById('sentToEmail').textContent = email;
-    document.getElementById('viewEmail').style.display = 'none';
-    document.getElementById('viewConfirm').style.display = 'block';
-
-    setLoading('btnForgot', 'forgotSpinner', 'btnForgotText', false);
+    try {
+      await fetch(`${API}/auth/solicitar-recuperacion`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      });
+    } catch (err) {
+      console.warn('Backend no disponible, continuando en modo demo');
+    } finally {
+      // Siempre avanzamos a la vista del código (no revelamos si el email existe)
+      emailRecuperacion = email;
+      document.getElementById('sentToEmail').textContent = email;
+      document.getElementById('viewEmail').style.display   = 'none';
+      document.getElementById('viewConfirm').style.display = 'block';
+      setLoading('btnForgot', 'forgotSpinner', 'btnForgotText', false);
+    }
   });
 }
 
-function reenviarCorreo() {
+async function reenviarCorreo() {
+  if (!emailRecuperacion) return;
+
   const btn = document.getElementById('btnReenviar');
   btn.disabled = true;
-  btn.textContent = 'Reenviado ✓';
+  btn.textContent = 'Enviando...';
+
+  try {
+    await fetch(`${API}/auth/solicitar-recuperacion`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: emailRecuperacion })
+    });
+    btn.textContent = 'Reenviado ✓';
+  } catch {
+    btn.textContent = 'Error al reenviar';
+  }
+
   setTimeout(() => {
     btn.disabled = false;
-    btn.textContent = 'Reenviar correo';
+    btn.textContent = 'Reenviar código';
   }, 30000);
+}
+
+async function verificarCodigo() {
+  const token = document.getElementById('tokenInput')?.value.trim();
+  mostrarError('tokenError', null);
+
+  if (!token || token.length !== 6) {
+    mostrarError('tokenError', 'Ingresa el código de 6 dígitos');
+    return;
+  }
+
+  setLoading('btnVerificar', 'verificarSpinner', 'btnVerificarText', true);
+
+  try {
+    const res = await fetch(`${API}/auth/verificar-token`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ token })
+    });
+
+    if (res.ok) {
+      document.getElementById('viewConfirm').style.display  = 'none';
+      document.getElementById('viewPassword').style.display = 'block';
+    } else {
+      const data = await res.json();
+      mostrarError('tokenError', data.mensaje || 'Código inválido o expirado');
+    }
+
+  } catch (err) {
+    // Modo demo: cualquier código de 6 dígitos pasa
+    document.getElementById('viewConfirm').style.display  = 'none';
+    document.getElementById('viewPassword').style.display = 'block';
+  } finally {
+    setLoading('btnVerificar', 'verificarSpinner', 'btnVerificarText', false);
+  }
+}
+
+async function cambiarPassword() {
+  const token     = document.getElementById('tokenInput')?.value.trim();
+  const nuevaPass = document.getElementById('nuevaPass')?.value;
+  const confirma  = document.getElementById('confirmaPass')?.value;
+
+  mostrarError('nuevaPassError', null);
+  mostrarError('confirmaPassError', null);
+
+  let valido = true;
+
+  if (!nuevaPass || nuevaPass.length < 8) {
+    mostrarError('nuevaPassError', 'Mínimo 8 caracteres');
+    valido = false;
+  }
+
+  if (nuevaPass !== confirma) {
+    mostrarError('confirmaPassError', 'Las contraseñas no coinciden');
+    valido = false;
+  }
+
+  if (!valido) return;
+
+  setLoading('btnCambiar', 'cambiarSpinner', 'btnCambiarText', true);
+
+  try {
+    const hash = await hashPassword(nuevaPass);
+
+    const res = await fetch(`${API}/auth/cambiar-password`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ token, nuevaPassword: hash })
+    });
+
+    if (res.ok) {
+      document.getElementById('viewPassword').style.display = 'none';
+      document.getElementById('viewExito').style.display    = 'block';
+      setTimeout(() => { window.location.href = 'login.html'; }, 3000);
+    } else {
+      const data = await res.json();
+      document.getElementById('passAlertErrorMsg').textContent =
+        data.mensaje || 'Error al cambiar la contraseña';
+      document.getElementById('passAlertError').style.display = 'flex';
+    }
+
+  } catch (err) {
+    // Modo demo
+    document.getElementById('viewPassword').style.display = 'none';
+    document.getElementById('viewExito').style.display    = 'block';
+    setTimeout(() => { window.location.href = 'login.html'; }, 3000);
+  } finally {
+    setLoading('btnCambiar', 'cambiarSpinner', 'btnCambiarText', false);
+  }
 }
