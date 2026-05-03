@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using SmartCampus.API.Domain.Entities;
 using SmartCampus.API.DTOs;
 using SmartCampus.API.Persistence.Context;
+using SmartCampus.API.Application.Services;
 
 namespace SmartCampus.API.Controllers
 {
@@ -11,19 +12,45 @@ namespace SmartCampus.API.Controllers
     public class AuthController : ControllerBase
     {
         private readonly SmartCampusDbContext _context;
+        private readonly RecuperacionService _recuperacionService;
 
-        public AuthController(SmartCampusDbContext context)
+        // ✅ UN solo constructor con todo
+        public AuthController(
+            SmartCampusDbContext context,
+            RecuperacionService recuperacionService)
         {
             _context = context;
+            _recuperacionService = recuperacionService;
+        }
+
+        [HttpPost("solicitar-recuperacion")]
+        public async Task<IActionResult> SolicitarRecuperacion([FromBody] SolicitarRecuperacionDto dto)
+        {
+            await _recuperacionService.SolicitarRecuperacion(dto.Email);
+            return Ok(new { mensaje = "Si el correo existe, recibirás un código." });
+        }
+
+        [HttpPost("verificar-token")]
+        public async Task<IActionResult> VerificarToken([FromBody] VerificarTokenDto dto)
+        {
+            var valido = await _recuperacionService.VerificarToken(dto.Token);
+            if (!valido) return BadRequest(new { mensaje = "Código inválido o expirado." });
+            return Ok(new { mensaje = "Código válido." });
+        }
+
+        [HttpPost("cambiar-password")]
+        public async Task<IActionResult> CambiarPassword([FromBody] CambiarPasswordDto dto)
+        {
+            var resultado = await _recuperacionService.CambiarPassword(dto.Token, dto.NuevaPassword);
+            if (!resultado) return BadRequest(new { mensaje = "Token inválido o expirado." });
+            return Ok(new { mensaje = "Contraseña actualizada correctamente." });
         }
 
         [HttpPost("register")]
         public IActionResult Register([FromBody] RegisterDto dto)
         {
             if (_context.Usuarios.Any(u => u.Email == dto.Email))
-            {
                 return BadRequest(new { mensaje = "El correo ya existe" });
-            }
 
             var usuario = new Usuario
             {
@@ -36,7 +63,6 @@ namespace SmartCampus.API.Controllers
             _context.Usuarios.Add(usuario);
             _context.SaveChanges();
 
-            // Si es estudiante (ejemplo: rol 3)
             if (dto.IdRol == 3)
             {
                 var estudiante = new Estudiante
@@ -47,7 +73,6 @@ namespace SmartCampus.API.Controllers
                     Semestre = dto.Semestre ?? 1,
                     FechaIngreso = DateOnly.FromDateTime(DateTime.Now)
                 };
-
                 _context.Estudiantes.Add(estudiante);
                 _context.SaveChanges();
             }
@@ -65,20 +90,16 @@ namespace SmartCampus.API.Controllers
                     u.PasswordHash == login.PasswordHash);
 
             if (user == null)
-            {
                 return Unauthorized(new { mensaje = "Credenciales incorrectas" });
-            }
 
-            var response = new LoginResponseDto
+            return Ok(new LoginResponseDto
             {
                 IdUsuario = user.IdUsuario,
                 Nombre = user.Nombre,
                 Email = user.Email,
                 Rol = user.Rol.NombreRol,
                 Token = "fake-token"
-            };
-
-            return Ok(response);
+            });
         }
     }
 }

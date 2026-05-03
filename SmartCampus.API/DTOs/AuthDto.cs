@@ -15,3 +15,19 @@
         public string Token { get; set; } = string.Empty;
     }
 }
+
+public class SolicitarRecuperacionDto
+{
+    public string Email { get; set; }
+}
+
+public class VerificarTokenDto
+{
+    public string Token { get; set; }
+}
+
+public class CambiarPasswordDto
+{
+    public string Token { get; set; }
+    public string NuevaPassword { get; set; }
+}

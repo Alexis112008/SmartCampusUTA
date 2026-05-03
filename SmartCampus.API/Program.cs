@@ -19,6 +19,8 @@ builder.Services.AddScoped<CampusRepository>();
 builder.Services.AddScoped<TramiteService>();
 builder.Services.AddScoped<TurnoService>();
 builder.Services.AddScoped<CampusService>();
+builder.Services.AddScoped<EmailService>();
+builder.Services.AddScoped<RecuperacionService>();
 
 // 2. Swagger (documentación automática de la API)
 builder.Services.AddEndpointsApiExplorer();
