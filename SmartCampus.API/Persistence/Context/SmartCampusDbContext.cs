@@ -22,6 +22,7 @@ namespace SmartCampus.API.Persistence.Context
         public DbSet<Documento> Documentos { get; set; }
         public DbSet<NodoCampus> NodosCampus { get; set; }
         public DbSet<RutaCampus> RutasCampus { get; set; }
+        public DbSet<TokenRecuperacion> TokensRecuperacion { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -39,6 +40,12 @@ namespace SmartCampus.API.Persistence.Context
             modelBuilder.Entity<Documento>().ToTable("Documentos");
             modelBuilder.Entity<NodoCampus>().ToTable("NodosCampus");
             modelBuilder.Entity<RutaCampus>().ToTable("RutasCampus");
+
+            modelBuilder.Entity<TokenRecuperacion>()
+             .ToTable("TokensRecuperacion")
+             .HasOne(t => t.Usuario)
+             .WithMany()
+             .HasForeignKey(t => t.IdUsuario);
 
             // Usuario → Estudiante (uno a uno)
             modelBuilder.Entity<Estudiante>()
