@@ -14,7 +14,7 @@ namespace SmartCampus.API.Application.Services
         }
 
         // Construir el Grafo desde la base de datos
-        private async Task<Grafo> ConstruirGrafoAsync()
+        private async Task<Grafo> ConstruirGrafoAsync() 
         {
             var grafo = new Grafo();
 
